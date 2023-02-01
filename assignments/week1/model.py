@@ -18,7 +18,7 @@ class LinearRegression:
         """
         fit
         """
-        # raise NotImplementedError()
+
 
         # Append a column with `1` to X for bias
         X = np.hstack(X, np.ones((X.shape[0], 1)))
