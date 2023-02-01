@@ -2,12 +2,16 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Jordan Matelsky",
-            "pennkey": "matelsky"
+            "name": "Sahachar Reddy Tippana",
+            "pennkey": "sahachar"
+        },
+        {
+            "name": "Raktimjyoti Parashar",
+            "pennkey": "rpara"
         }
     ],
     "sources": [
-        "https://example.com",
+        "CIS_522_W2D1_worksheet - https://colab.research.google.com/drive/1UkT60xGbfzDfq-yOCYOr6cgtMMnW_4z1?usp=sharing",
         "Conversations with TA (include TA's name)",
         "LLM (include information about the LLM and how it was used)"
     ]
