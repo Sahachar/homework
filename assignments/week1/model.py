@@ -37,12 +37,13 @@ class LinearRegression:
         # raise NotImplementedError()
 
         # Append a column with `1` to X for bias
-        X = np.hstack(np.ones((X.shape[0], 1)), X)
+        # X = np.hstack(np.ones((X.shape[0], 1)), X)
 
-        # Calculate y_hat (predictions) using the weights and bias
+        # Calculate y_hat (predictions) using the weights and bias and return the predictions
         # y_hat = X @ np.hstack(self.w, self.b)
 
-        return X @ np.hstack(self.w, self.b)
+        # return X @ np.hstack(self.w, self.b)
+        return X @ self.w + self.b
 
 
 class GradientDescentLinearRegression(LinearRegression):
@@ -88,7 +89,7 @@ class GradientDescentLinearRegression(LinearRegression):
         """
         # raise NotImplementedError()
 
-        # Calculate predictions using the weights and bias
+        # Calculate predictions using the weights and bias and return the predictions
         # y_pred = X @ self.w + self.b
 
         return X @ self.w + self.b
