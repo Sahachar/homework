@@ -20,7 +20,7 @@ class LinearRegression:
         """
 
         # Append a column with `1` to X for bias
-        X = np.hstack(np.ones((X.shape[0], 1)), X)
+        X = np.hstack((np.ones((X.shape[0], 1)), X))
 
         # Analytical solution by Matrix Inversion if Inverse exists
         # if np.linalg.det(X.T @ X) != 0:
