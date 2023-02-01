@@ -23,8 +23,8 @@ class LinearRegression:
         X = np.hstack(X, np.ones((X.shape[0], 1)))
 
         # Analytical solution by Matrix Inversion if Inverse exists
-        if np.linalg.det(X.T @ X) != 0:
-            sol = np.linalg.inv(X.T @ X) @ X.T @ y
+        # if np.linalg.det(X.T @ X) != 0:
+        sol = np.linalg.inv(X.T @ X) @ X.T @ y
 
         # Extracting weights and bias
         self.w = sol[:-1]
@@ -66,8 +66,10 @@ class GradientDescentLinearRegression(LinearRegression):
             y_pred = X @ self.w + self.b  # Predicting the labels for X
             dl_dw = (2 / n) * X.T @ (y_pred - y)
             dl_db = (2 / n) * (y_pred - y)
-            self.w -= lr * dl_dw  # Update weights
-            self.b -= lr * dl_db  # Update bias
+            # self.w -= lr * dl_dw  # Update weights
+            # self.b -= lr * dl_db  # Update bias
+            self.w -= lr * (2 / n) * X.T @ (y_pred - y)  # Update weights
+            self.b -= lr * (2 / n) * (y_pred - y)  # Update bias
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
