@@ -28,7 +28,7 @@ class LinearRegression:
 
         # Extracting weights and bias
         self.w = sol[1:]
-        self.b = sol[0]
+        self.b = sol[0][0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
