@@ -40,9 +40,9 @@ class LinearRegression:
         X = np.hstack(np.ones((X.shape[0], 1)), X)
 
         # Calculate y_hat (predictions) using the weights and bias
-        y_hat = X @ np.hstack(self.w, self.b)
+        # y_hat = X @ np.hstack(self.w, self.b)
 
-        return y_hat
+        return X @ np.hstack(self.w, self.b)
 
 
 class GradientDescentLinearRegression(LinearRegression):
@@ -89,6 +89,6 @@ class GradientDescentLinearRegression(LinearRegression):
         # raise NotImplementedError()
 
         # Calculate predictions using the weights and bias
-        y_pred = X @ self.w + self.b
+        # y_pred = X @ self.w + self.b
 
-        return y_pred
+        return X @ self.w + self.b
