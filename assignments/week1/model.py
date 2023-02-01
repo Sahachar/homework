@@ -20,15 +20,15 @@ class LinearRegression:
         """
 
         # Append a column with `1` to X for bias
-        X = np.hstack(X, np.ones((X.shape[0], 1)))
+        X = np.hstack(np.ones((X.shape[0], 1)), X)
 
         # Analytical solution by Matrix Inversion if Inverse exists
         # if np.linalg.det(X.T @ X) != 0:
         sol = np.linalg.inv(X.T @ X) @ X.T @ y
 
         # Extracting weights and bias
-        self.w = sol[:-1]
-        self.b = sol[-1]
+        self.w = sol[1:]
+        self.b = sol[0]
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
