@@ -64,8 +64,8 @@ class GradientDescentLinearRegression(LinearRegression):
         #  Gradient descent training loop
         for epoch in range(epochs):
             y_pred = X @ self.w + self.b  # Predicting the labels for X
-            dl_dw = (2 / n) * X.T @ (y_pred - y)
-            dl_db = (2 / n) * (y_pred - y)
+            # dl_dw = (2 / n) * X.T @ (y_pred - y)
+            # dl_db = (2 / n) * (y_pred - y)
             # self.w -= lr * dl_dw  # Update weights
             # self.b -= lr * dl_db  # Update bias
             self.w -= lr * (2 / n) * X.T @ (y_pred - y)  # Update weights
