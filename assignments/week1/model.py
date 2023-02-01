@@ -36,8 +36,11 @@ class LinearRegression:
         """
         # raise NotImplementedError()
 
+        # Append a column with `1` to X for bias
+        X = np.hstack(np.ones((X.shape[0], 1)), X)
+
         # Calculate y_hat (predictions) using the weights and bias
-        y_hat = X @ self.w + self.b
+        y_hat = X @ np.hstack(self.w, self.b)
 
         return y_hat
 
