@@ -89,7 +89,7 @@ class GradientDescentLinearRegression(LinearRegression):
         """
         # raise NotImplementedError()
 
-        # # Calculate predictions using the weights and bias
+        # Calculate predictions using the weights and bias
         y_pred = X@self.w + self.b
 
         return y_pred 
