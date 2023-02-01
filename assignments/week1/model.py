@@ -59,17 +59,18 @@ class GradientDescentLinearRegression(LinearRegression):
 
         # Initialuze the weights
         self.w = np.zeros(X.shape[1])
-        self.b = np.zeros(X.shape[0])
+        self.b = 0
 
         #  Gradient descent training loop
         for epoch in range(epochs):
             y_pred = X @ self.w + self.b  # Predicting the labels for X
             # dl_dw = (2 / n) * X.T @ (y_pred - y)
             # dl_db = (2 / n) * (y_pred - y)
+
             # self.w -= lr * dl_dw  # Update weights
             # self.b -= lr * dl_db  # Update bias
             self.w -= lr * (2 / n) * X.T @ (y_pred - y)  # Update weights
-            self.b -= lr * (2 / n) * (y_pred - y)  # Update bias
+            self.b -= lr * (2 / n) * np.sum(y_pred - y)  # Update bias
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
