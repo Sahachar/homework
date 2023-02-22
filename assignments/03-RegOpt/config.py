@@ -6,6 +6,9 @@ from torchvision.transforms import Compose, Normalize, ToTensor
 
 
 class CONFIG:
+    """
+    Implemented the class Config here
+    """
 
     batch_size = 64
     num_epochs = 7
