@@ -12,7 +12,14 @@ class CONFIG:
     initial_learning_rate = 0.001
     initial_weight_decay = 0
 
-    lrs_kwargs = {"T_max": 448, "eta_min": 0, "last_epoch": -1, "verbose": False}
+    lrs_kwargs = {
+        # You can pass arguments to the learning rate scheduler
+        # constructor here.
+        "T_max": 448,
+        "eta_min": 0,
+        "last_epoch": -1,
+        "verbose": False,
+    }
 
     optimizer_factory: Callable[
         [nn.Module], torch.optim.Optimizer
